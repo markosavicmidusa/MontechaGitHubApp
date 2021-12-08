@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.nav-bar{
+   background: #fff4ef ;
+    height: 110px;
+    display: flex;
+    padding: 5px 1% 5px 1%;
+    
+  }
+
+  .logo{
+      font-size: 40pt;
+      font-family: 'Dancing Script', cursive;
+      font-style: bold;
+      flex: 1;
+       
+  }
+  .navigation-page{
+    
+    height: 50%;
+    flex: 2;
+    justify-content: center;
+  }
+
+  .pages-list{
+    height: 100%;
+    margin-top: 4%;
+    padding: 1% 3% 0% 3%;
+    font-size: 16pt;
+    list-style: none;
+    display: flex;
+    
+    
+}
+
+  .listItem{
+
+  
+    border-radius: 7px;
+    flex: 1;
+    text-align: center;
+    padding-top: 15px;
+    cursor: pointer;
+  }
+  .listItem:hover{
+
+    color: white;
+    background: #ff9966;
+  }
+
+
+  .navigation-option{
+    
+    flex: 1;
+    display: flex;
+    align-items: right;
+
+  }
+
+  .profile-picture{
+   
+    border-radius: 50%;
+    width: 50px;
+    height: 45%;
+    cursor: pointer;
+
+  }
+  .welcome{
+    
+    font-size: 15pt;
+    flex: 3;
+    text-align: right;
+    padding: 15px 15px 0 0;
+    color: blue;
+  
+  }

@@ -1,0 +1,19 @@
+.footer-div{
+    height: 20vh;
+    background-color: #151371;
+    border: 1px solid #151371;
+  
+}
+
+.footer-content{
+
+    border: 1px solid #151371;
+    
+    text-align: center;
+    height: 90%;
+    width: 40%;
+    margin:auto;
+    
+}
+
+

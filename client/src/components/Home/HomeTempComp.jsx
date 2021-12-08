@@ -2,14 +2,19 @@ import React, { useEffect, useState } from 'react'
 import CardCmp from '../CardCmp/CardCmp'
 import Projects from './ProjectsCmp/Projects'
 import './hometempcmp.css'
-import { projects } from '../../dummyRepos'
+
 import Navbar from '../NavBar/Navbar'
 import Footer from '../Footer/Footer'
 import { useLocation } from 'react-router'
 import UserInfoList from './UserInfoList/UserInfoList'
 
 
+
+        
+
 export default function HomeTempComp({ mypage, user }) {
+
+
 
     const MyPage = () => {
 
@@ -18,7 +23,7 @@ export default function HomeTempComp({ mypage, user }) {
         const [updated, setUpdated] = useState(null);
 
         const [followersData, setFollowersData] = useState([]);
-
+        const [projectData, setProjectData] = useState([]);
 
         const path = user.username;
 
@@ -47,10 +52,21 @@ export default function HomeTempComp({ mypage, user }) {
                 setFollowersData(dataFollowers);
             };
 
+            const getProjects = async () => {
 
-
-
-            getProfile();
+                const urlProjects = `http://localhost:5000/api/githubUsers/${path.toString()}/repos`;
+                const optionsProjects = {
+                    "method": "GET",
+                };
+        
+                const responseProjects = await fetch(urlProjects, optionsProjects)
+                const dataProjects = await responseProjects.json();
+                setProjectData(dataProjects);
+        
+            }
+        
+                getProfile();
+                getProjects();
 
         }, []);
 
@@ -94,7 +110,7 @@ export default function HomeTempComp({ mypage, user }) {
                                 <h3 >Projects</h3>
                                 <div className="project-wrapper" >
 
-                                    {projects.map(projects => (
+                                    {projectData.map(projects => (
                                         <Projects key={projects.id} dataProjects={projects} />
                                     ))}
 
@@ -177,7 +193,6 @@ export default function HomeTempComp({ mypage, user }) {
                 getProjects();
 
         }, []);
-
 
         return (
             <>
